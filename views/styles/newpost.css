@@ -1,0 +1,110 @@
+body {
+  background-color: lightgray;
+}
+
+.header {
+  padding: 24px;
+  background-color: white;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header nav .logo {
+  width: 24px;
+  height: 24px;
+}
+
+.header .header-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 16px;
+  border-radius: 40px;
+
+  background-color: lightgray;
+}
+
+.header .header-search svg {
+  fill: #707069;
+  width: 24px;
+  height: 24px;
+}
+.header .header-search input {
+  flex: 1;
+  border: none;
+  height: 100%;
+
+  padding: 8px;
+
+  font-size: 16px;
+  background: transparent;
+
+  outline: none;
+}
+
+.header .avatar {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 100%;
+}
+
+main {
+  width: 880px;
+  margin: 64px auto;
+
+  padding: 32px;
+
+  border-radius: 16px;
+
+  background-color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+form .input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 8px;
+
+  border-bottom: 2px solid gray;
+}
+
+form .input:focus-within {
+  border-color: #0074e8;
+  border-width: 3px;
+}
+
+form .input label {
+  font-size: 14px;
+}
+
+form .input input {
+  padding: 8px;
+  border: none;
+  font-size: 24px;
+  outline: none;
+}
+
+form button {
+  padding: 16px;
+}
