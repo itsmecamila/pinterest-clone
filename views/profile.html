@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/profile.css">
     <title>Pinterest</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav>
-            <div>
+            <div class="header-left">
             <!--Aqui ficaram os itens do menu do lado ESQUERDO-->
             <a href="home.html">
                 <img src="https://api.iconify.design/logos:pinterest.svg?color=%23ffffff" alt="Logotipo do Site"> <!--Aqui ficará a logo para retornar a home-->
@@ -18,7 +19,7 @@
             <a href="newpost.html">Criar</a>
             </div>
 
-            <div>
+            <div class="header-search">
                 <!--Aqui está o ícone de lupa e o campo de busca-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 12 12"><path fill="#ffffff" d="M5 1a4 4 0 1 0 2.248 7.31l2.472 2.47a.75.75 0 1 0 1.06-1.06L8.31 7.248A4 4 0 0 0 5 1ZM2.5 5a2.5 2.5 0 1 1 5 0a2.5 2.5 0 0 1-5 0Z"/></svg> 
                 <input type="text" placeholder="Procurar">
@@ -33,13 +34,17 @@
     </header>
 
     <main>
-        <section>
+        <section class="personal-informations">
             <!--Aqui ficarãa as informações pessoais-->
             <img src="" alt=""> <!--Aqui ficará a imagem de perfil-->
             <h1>Nome do usuário</h1> <!--Nome do usuário-->
             <p>@usuario</p> <!--Usuário-->
             <!--Se der tempo, ACRESCENTAR EDITÇÃO DE PERFIL-->
         </section>
+        <div>
+            <button>Compartilhar</button>
+            <button>Editar perfil</button>
+        </div>
         <section>
             <!--Aqui ficarão os POSTS CRIADOS-->
             <a href="post.html">
