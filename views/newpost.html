@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/newpost.css">
+
     <title>Pinterest</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav>
-            <div>
-            <!--Aqui ficaram os itens do menu do lado ESQUERDO-->
-            <a href="home.html">
-                <img src="https://api.iconify.design/logos:pinterest.svg?color=%23ffffff" alt="Logotipo do Site"> <!--Aqui ficará a logo para retornar a home-->
-            </a>
-            <a href="home.html">Página inicial</a>
-            <a href="newpost.html">Criar</a>
+            <div class="header-left">
+              <!--Aqui ficaram os itens do menu do lado ESQUERDO-->
+              <a href="home.html">
+                  <img class="logo" src="https://api.iconify.design/logos:pinterest.svg?color=%23ffffff" alt="Logotipo do Site"> <!--Aqui ficará a logo para retornar a home-->
+              </a>
+              <a href="home.html">Página inicial</a>
+              <a href="newpost.html">Criar</a>
             </div>
 
-            <div>
+            <div class="header-search">
                 <!--Aqui está o ícone de lupa e o campo de busca-->
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 12 12"><path fill="#ffffff" d="M5 1a4 4 0 1 0 2.248 7.31l2.472 2.47a.75.75 0 1 0 1.06-1.06L8.31 7.248A4 4 0 0 0 5 1ZM2.5 5a2.5 2.5 0 1 1 5 0a2.5 2.5 0 0 1-5 0Z"/></svg> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 12 12"><path fill="#707069" d="M5 1a4 4 0 1 0 2.248 7.31l2.472 2.47a.75.75 0 1 0 1.06-1.06L8.31 7.248A4 4 0 0 0 5 1ZM2.5 5a2.5 2.5 0 1 1 5 0a2.5 2.5 0 0 1-5 0Z"/></svg> 
                 <input type="text" placeholder="Procurar">
             </div>
             <!--Aqui ficaram os itens do lado DIREITO do menu-->
             <div>
                 <a href="profile.html">
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
+                    <img src="https://github.com/itsmecamila.png" alt="" class="avatar">
                 </a>
             </div>
         </nav>
@@ -35,12 +40,12 @@
     <main>
         <form action="">
             <!--Titulo do post-->
-            <div> 
+            <div class="input"> 
                 <label for="title">Título</label>
                 <input type="text" name="title" id="title" placeholder="Escreva o título aqui">    
             </div>
             <!--Descrição do post-->
-            <div>  
+            <div class="input"> 
                 <label for="description">Descrição</label>
                 <input type="text" name="description" id="description" placeholder="Escreva a descrição do post">
             </div>
