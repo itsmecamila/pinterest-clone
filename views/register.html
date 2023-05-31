@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/register.css">
     <title>Pinterest</title>
 </head>
 <body>
-    <main>
+    <main class="content">
         <header>
             <a href="home.html">
                 <img src="https://api.iconify.design/logos:pinterest.svg?color=%23ffffff" alt="Logotipo do Site"> <!--Aqui ficará a logo para retornar a home-->
@@ -16,22 +17,25 @@
         </header>
         <section>
             <form action="">
-                <div>
+                <div class="input">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Digite seu email">
                 </div>
-                <div>
+                <div class="input">
                     <label for="password">Senha</label>
                     <input type="password" name="password" id="password" placeholder="Digite sua senha">
                 </div>
                 <button>Criar conta</button>
-                <div> <!--Termos de uso-->
-                    <small>Termos aqui</small>
+            </form>
+            <footer>
+                    <div> <!--Termos de uso-->
+                    <small>Ao continuar, você concorda com os Termos de Serviço 
+                        do Pinterest e confirma que leu a nossa Política de Privacidade.</small>
                 </div>
                 <div>
                     <p>Já tem uma conta? <a href="login.html"> Entrar </a> </p>
                 </div>
-            </form>
+                </footer>
         </section>
     </main>
     
