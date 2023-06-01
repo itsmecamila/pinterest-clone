@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/register.css">
     <title>Pinterest</title>
 </head>
@@ -16,7 +17,7 @@
             <h1>Bem-vindo(a) ao Pinteret</h1>
         </header>
         <section>
-            <form action="">
+            <form method="POST" action="../process/register-process.php">
                 <div class="input">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Digite seu email">
@@ -25,7 +26,7 @@
                     <label for="password">Senha</label>
                     <input type="password" name="password" id="password" placeholder="Digite sua senha">
                 </div>
-                <button>Criar conta</button>
+                <button type="submit">Criar conta</button>
             </form>
             <footer>
                     <div> <!--Termos de uso-->
