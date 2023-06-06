@@ -5,103 +5,45 @@ main{
 
 }
   
-.header {
-  padding: 24px;
-}
-
-.header nav {
+main {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  flex-direction: column;
+
+  margin: 64px auto;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: white;
 }
 
-.header .header-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.header nav .logo {
-  width: 24px;
-  height: 24px;
-}
-
-.header .header-search {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 8px 16px;
-  border-radius: 40px;
-
-  background-color: lightgray;
-}
-
-.header .header-search svg {
-  fill: #707069;
-  width: 24px;
-  height: 24px;
-}
-.header .header-search input {
-  flex: 1;
+main button{
+  width: 180px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 10px;
   border: none;
-  height: 100%;
 
-  padding: 8px;
-
-  font-size: 16px;
-  background: transparent;
-
-  outline: none;
 }
 
-.header .avatar {
-  width: 32px;
-  height: 32px;
+.personal-informations{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
+  margin-bottom: 24px;
+}
+
+.personal-informations img {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 18px;
   border-radius: 100%;
 }
-  
-  main {
-    display: flex;
-    flex-direction: column;
 
-    margin: 64px auto;
-    padding: 32px;
-    border-radius: 16px;
-    background-color: white;
-  }
+.personal-informations h1 {
+  margin-bottom: 4px;
+}
 
-  main button{
-    width: 180px;
-    height: 40px;
-    font-size: 18px;
-    border-radius: 10px;
-    border: none;
-
-  }
-
-  .personal-informations{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 24px;
-  }
-  
-  .personal-informations img {
-    width: 128px;
-    height: 128px;
-    margin-bottom: 18px;
-    border-radius: 100%;
-  }
-  
-  .personal-informations h1 {
-    margin-bottom: 4px;
-  }
-  
 .container {
   margin: 0 0 24px;
   column-count: 5;

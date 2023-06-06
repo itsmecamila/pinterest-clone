@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/register.css">
+    
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <link rel="stylesheet" href="../assets/styles/pages/register.css">
+
     <title>Pinterest</title>
 </head>
 <body>
     <main class="content">
         <header>
-            <a href="home.html">
-                <img src="https://api.iconify.design/logos:pinterest.svg?color=%23ffffff" alt="Logotipo do Site"> <!--Aqui ficará a logo para retornar a home-->
-            </a>
+            <img src="https://api.iconify.design/logos:pinterest.svg?color=%23ffffff" alt="Logotipo do Site"> <!--Aqui ficará a logo para retornar a home-->
+
             <h1>Bem-vindo(a) ao Pinteret</h1>
         </header>
         <section>
@@ -34,7 +35,7 @@
                         do Pinterest e confirma que leu a nossa Política de Privacidade.</small>
                 </div>
                 <div>
-                    <p>Já tem uma conta? <a href="login.html"> Entrar </a> </p>
+                    <p>Já tem uma conta? <a href="./login.php"> Entrar </a> </p>
                 </div>
                 </footer>
         </section>

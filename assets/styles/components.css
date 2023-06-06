@@ -1,3 +1,4 @@
+/* Header Component */
 .header {
   padding: 24px;
 }
@@ -28,7 +29,7 @@
   padding: 8px 16px;
   border-radius: 40px;
 
-  background-color: lightgray;
+  background-color: #f0f0f0;
 }
 
 .header .header-search svg {
@@ -55,50 +56,53 @@
 
   border-radius: 100%;
 }
+/* End Header Component */
 
-.container {
+/* Masonry Component */
+.masonry {
   margin: 0 24px 24px;
   column-count: 5;
   column-gap: 10px;
 }
 
-.container a > img {
+.masonry a > img {
   width: 100%;
   border-radius: 16px;
 
   transition: filter 100ms;
 }
 
-.container a:hover > img {
+.masonry a:hover > img {
   filter: brightness(0.8);
 }
 
-.container figure {
+.masonry figure {
   margin: 0;
   display: flex;
   margin-bottom: 10px;
   break-inside: avoid;
 }
 
-.container figure a > div {
+.masonry figure a > div {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.container figure a > div > div {
+.masonry figure a > div > div {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.container figure a > div img {
+.masonry figure a > div img {
   width: 32px;
   height: 32px;
 
   border-radius: 100%;
 }
 
-.container figure a > div > div p {
+.masonry figure a > div > div p {
   font-size: 14px;
 }
+/* End Masonry Component */

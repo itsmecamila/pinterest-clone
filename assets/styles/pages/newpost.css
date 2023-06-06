@@ -2,65 +2,6 @@ body {
   background-color: lightgray;
 }
 
-.header {
-  padding: 24px;
-  background-color: white;
-}
-
-.header nav {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.header .header-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.header nav .logo {
-  width: 24px;
-  height: 24px;
-}
-
-.header .header-search {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 8px 16px;
-  border-radius: 40px;
-
-  background-color: lightgray;
-}
-
-.header .header-search svg {
-  fill: #707069;
-  width: 24px;
-  height: 24px;
-}
-.header .header-search input {
-  flex: 1;
-  border: none;
-  height: 100%;
-
-  padding: 8px;
-
-  font-size: 16px;
-  background: transparent;
-
-  outline: none;
-}
-
-.header .avatar {
-  width: 32px;
-  height: 32px;
-
-  border-radius: 100%;
-}
-
 main {
   width: 880px;
   margin: 64px auto;
@@ -140,7 +81,7 @@ form button {
   border: 4px dashed darkgray;
   border-radius: 16px;
 
-  background: lightgray;
+  background: #f0f0f0;
   cursor: pointer;
 }
 

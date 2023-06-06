@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/profile.css">
+    
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <link rel="stylesheet" href="../assets/styles/components.css">
+    <link rel="stylesheet" href="../assets/styles/pages/profile.css">
+
     <title>Pinterest</title>
 </head>
 <body>
@@ -13,11 +16,11 @@
         <nav>
             <div class="header-left">
               <!--Aqui ficaram os itens do menu do lado ESQUERDO-->
-              <a href="home.html">
+              <a href="./home.php">
                   <img class="logo" src="https://api.iconify.design/logos:pinterest.svg?color=%23ffffff" alt="Logotipo do Site"> <!--Aqui ficará a logo para retornar a home-->
               </a>
-              <a href="home.html">Página inicial</a>
-              <a href="newpost.html">Criar</a>
+              <a href="./home.php">Página inicial</a>
+              <a href="./newpost.php">Criar</a>
             </div>
 
             <div class="header-search">
@@ -27,7 +30,7 @@
             </div>
             <!--Aqui ficaram os itens do lado DIREITO do menu-->
             <div>
-                <a href="profile.html">
+                <a href="./profile.php">
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
                     <img src="https://github.com/itsmecamila.png" alt="" class="avatar">
                 </a>
@@ -66,7 +69,7 @@
           </a>
         </section>
 
-        <section class="container">
+        <section class="masonry">
           <figure>
             <a href="./post.html">
               <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
