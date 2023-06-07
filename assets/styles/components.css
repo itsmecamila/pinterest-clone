@@ -1,6 +1,7 @@
 /* Header Component */
 .header {
-  padding: 24px;
+  padding: 16px 24px;
+  background-color: white;
 }
 
 .header nav {
