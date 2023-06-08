@@ -49,7 +49,7 @@
           if ($posts->num_rows > 0) {
             while ($row = $posts->fetch_assoc()) {
               echo '<figure>';
-              echo '<a href="./post.php">';
+              echo '<a href="./post.php?id=' . $row['id'] .'">';
               echo '<img src="data:image/png;base64,' . $row['image'] . '" />';
               echo '</a>';
               echo '</figure>';

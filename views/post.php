@@ -1,3 +1,10 @@
+<?php
+    $conn = mysqli_connect("localhost", "root", "123", "pinterest");
+    $sql = "select * from posts where id = " . $_GET['id'];
+
+    $post = mysqli_query($conn,$sql)->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,15 +55,20 @@
         <!--Post-->
         <section class="post-content">
             <div class="post-content-image"> <!--Imagem-->
-                <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
+                <?php
+                    echo '<img src="data:image/png;base64,' . $post['image'] . '" />';
+                ?>
+                <!-- <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt=""> -->
             </div>
             <div class="post-details"> <!--Informações do post-->
                 <header><!--Botão para SALVAR post-->
                     <button>Salvar</button>
                 </header>
                 <div> <!--Título e descrição-->
-                    <h1>Título do post</h1>
-                    <p>Descrição do post</p>
+                    <?php
+                        echo "<h1>" . $post['title'] . "</h1>";
+                        echo "<p>" . $post['description'] . "</p>";
+                    ?>
                 </div>
                 <footer> <!--Comentários-->
                     <h2>Comentários</h2>
