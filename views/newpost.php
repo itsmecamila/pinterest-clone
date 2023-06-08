@@ -39,7 +39,7 @@
     </header>
 
     <main>
-        <form action="">
+        <form method="POST" action="../process/newpost-process.php" enctype="multipart/form-data">
             <div class="form-inputs">
               <!--Titulo do post-->
               <div class="input"> 

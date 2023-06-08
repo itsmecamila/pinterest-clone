@@ -37,19 +37,35 @@
             </div>
         </nav>
     </header>
-
+    
     <main class="masonry">
         <!--Aqui ficarão todos os posts-->
-        <figure>
+        <?php
+          $conn = mysqli_connect("localhost", "root", "", "pinterest");
+          $sql = "select * from posts";
+
+          $posts = mysqli_query($conn,$sql);
+
+          if ($posts->num_rows > 0) {
+            while ($row = $posts->fetch_assoc()) {
+              echo '<figure>';
+              echo '<a href="./post.php">';
+              echo '<img src="data:image/png;base64,' . $row['image'] . '" />';
+              echo '</a>';
+              echo '</figure>';
+            }
+          }
+        ?>
+        <!-- <figure>
           <a href="./post.php">
             <img src="https://i.pinimg.com/564x/b2/70/d6/b270d60b7b423f6f9e656aa4edd08a21.jpg" alt="">
-            <!-- <div>
+            <div>
               <p>Memezinho</p>
               <div>
                 <img src="https://github.com/SadS4ndWiCh.png" alt="">
                 <p>SadS4ndWiCh</p>
               </div>
-            </div> -->
+            </div>
           </a>
         </figure>
         <figure>
@@ -60,23 +76,23 @@
         <figure>
           <a href="./post.php">
             <img src="https://i.pinimg.com/564x/1b/0e/7a/1b0e7a8c337bb2478b685485a5a9e401.jpg" alt="">
-            <!-- <div>
+            <div>
               <div>
                 <img src="https://github.com/SadS4ndWiCh.png" alt="">
                 <p>SadS4ndWiCh</p>
               </div>
-            </div> -->
+            </div>
           </a> 
         </figure>
         <figure>
           <a href="./post.php">
             <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
-            <!-- <div>
+            <div>
               <div>
                 <img src="https://github.com/itsmecamila.png" alt="">
                 <p>itsmecamila</p>
               </div>
-            </div> -->
+            </div>
           </a> 
         </figure>
         <figure>
@@ -92,13 +108,13 @@
         <figure>
           <a href="./post.php">
             <img src="https://i.pinimg.com/564x/0c/77/99/0c779927bd67cc6597a0872634820bbc.jpg" alt=""> 
-            <!-- <div>
+            <div>
               <p>Nyan</p>
               <div>
                 <img src="https://github.com/itsmecamila.png" alt="">
                 <p>itsmecamila</p>
               </div>
-            </div> -->
+            </div>
           </a>
         </figure>
         <figure>
@@ -146,7 +162,9 @@
           <a href="./post.php">
             <img src="https://i.pinimg.com/564x/fa/cd/1f/facd1f76ffa175c3ce3770baeed9d6ec.jpg" alt=""> 
           </a>
-        </figure>
+        </figure> -->
     </main>
+
+    
 </body>
 </html>
