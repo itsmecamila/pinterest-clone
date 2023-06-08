@@ -60,13 +60,26 @@
 
                   <small>Recomendamos o uso de arquivos de alta qualidade .jpg com menos de 20 MB</small>
                 </label>
-                <input type="file" name="file" id="file">
+                <input type="file" name="file" id="file" accept="image/*">
+                <img class="image-preview">
                 <!--Colocar PREVIEW imagem-->
             </div>
             <button type="submit">Criar</button>
             <!--Levar para a página do POST criado-->
         </form>
     </main>
-    
+
+    <script>
+        const imageFileInputEl = document.querySelector("#file");
+        const imagePreviewEl = document.querySelector(".image-preview");
+
+        imageFileInputEl.onchange = e => {
+            const [file] = imageFileInputEl.files;
+
+            if (file) {
+                imagePreviewEl.src = URL.createObjectURL(file);
+            }
+        }
+    </script>
 </body>
 </html>
