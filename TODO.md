@@ -8,13 +8,25 @@
     [x] - Entrar com uma conta existente
         [x] - Setar o cookie de autenticação no navegador
     [x] - Bloquear rotas com autenticação de usuários não logados
+    [x] - Deslogar
 
 [x] - Posts
     [x] - Criação de um novo post
-    [] - Comentar em um post
+    [x] - Comentar em um post
+    [] - CSS comentarios
+    [] - Excluir post
+    [] - Identificar dono do post
+    [] - Tratamento para post sem imagem
+    [] - Salvar post em pasta (se n tiver paginas, sugerir criação)
+    [] - Barra de rolagem para comentarios excedendo tamanho da imagem
 
 [] - Perfil
-    [] - Mostrar os posts criado pelo usuário
+    [x] - Mostrar os posts criado pelo usuário
+    [x] - Nome, usuario e icone no perfil
+    [] -  Editar perfil
+    [] - Atualizar icon em todas pages
+    [] - Botã 
+
 
 ## Funcionalidades Futuras
 

@@ -1,6 +1,10 @@
 <?php
   require "../process/validation-process.php";
   validarLogin();
+
+  require "../services/db.php";
+  $conn = connectDatabase();
+  $user = mysqli_query($conn, "select * from users where username = '".$_COOKIE['username']."'")->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -39,17 +43,26 @@
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
                     <img src="https://github.com/itsmecamila.png" alt="" class="avatar">
                 </a>
+                </a>
+                <a href="../process/logout-process.php">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000" d="M15.325 16.275q-.275-.325-.275-.737t.275-.688l1.85-1.85H10q-.425 0-.713-.288T9 12q0-.425.288-.713T10 11h7.175l-1.85-1.85q-.3-.3-.3-.713t.3-.712q.275-.3.688-.3t.687.275l3.6 3.6q.15.15.213.325t.062.375q0 .2-.062.375t-.213.325l-3.6 3.6q-.325.325-.713.288t-.662-.313ZM5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h6q.425 0 .713.288T12 4q0 .425-.288.713T11 5H5v14h6q.425 0 .713.288T12 20q0 .425-.288.713T11 21H5Z"/></svg>
+                </a>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="personal-informations">
-            <!--Aqui ficarãa as informações pessoais-->
-            <img src="https://github.com/itsmecamila.png" alt=""> <!--Aqui ficará a imagem de perfil-->
-            <h1>Nome do usuário</h1> <!--Nome do usuário-->
-            <p>@usuario</p> <!--Usuário-->
-            <!--Se der tempo, ACRESCENTAR EDITÇÃO DE PERFIL-->
+            <!--Aqui ficarão as informações pessoais-->
+            <?php
+              echo '<object data="'.$user['photo'].'" type="image/png">';
+              echo '<img src="https://ui-avatars.com/api/?name='.$user['username'].'" alt="">';
+              echo '</object>';
+
+              echo '<h1>' .$user['name']. '</h1> <!--Nome do usuário-->';
+              echo '<p>' .$user['username']. '</p> <!--Usuário-->';
+              echo '<!--Se der tempo, ACRESCENTAR EDITÇÃO DE PERFIL-->';
+            ?>
         </section>
         <div>
             <button>Compartilhar</button>
@@ -69,18 +82,14 @@
         </section>
 
         <section class="pins-actions">
-          <a href="./newpost.html">
+          <a href="./newpost.php">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z"/></svg>
           </a>
         </section>
 
         <section class="masonry">
           <?php
-            require '../services/db.php';
-
             $username = $_COOKIE['username'];
-
-            $conn = connectDatabase();
             $sql = "select * from posts where user = '$username'";
 
             $posts = mysqli_query($conn,$sql);
