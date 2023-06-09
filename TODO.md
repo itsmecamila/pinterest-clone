@@ -26,6 +26,7 @@
     [] -  Editar perfil
     [] - Atualizar icon em todas pages
     [] - Botã 
+    [] - Mensagem quando não tiver nenhum post
 
 
 ## Funcionalidades Futuras
@@ -34,3 +35,4 @@
     [] - Pastas
         [] - Criar uma nova pasta
         [] - Adicionar um post em uma pasta
+        [] - Opção de visibilidade

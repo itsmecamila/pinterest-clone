@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/styles/reset.css">
     <link rel="stylesheet" href="../assets/styles/components.css">
     <link rel="stylesheet" href="../assets/styles/pages/profile.css">
+    <link rel="stylesheet" href="../assets/styles/pages/folders.css">
 
     <title>Pinterest</title>
 </head>
@@ -76,105 +77,32 @@
         </section>
 
         <section class="pins-nav">
-          <a href="#" class="pins-nav-current-page">
+          <a href="./profile.php"">
             Criados
           </a>
-          <a href="./folders.php" >
+          <a href="#" class="pins-nav-current-page">
             Salvos
           </a>
         </section>
 
+
+
         <section class="pins-actions">
-          <a href="./newpost.php">
+          <a href="./newfolder.php">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z"/></svg>
           </a>
         </section>
 
-        <section class="masonry">
-          <?php
-            $username = $_COOKIE['username'];
-            $sql = "select * from posts where user = '$username'";
-
-            $posts = mysqli_query($conn,$sql);
-
-            if ($posts->num_rows > 0) {
-              while ($row = $posts->fetch_assoc()) {
-                echo '<figure>';
-                echo '<a href="./post.php?id=' . $row['id'] .'">';
-                echo '<img src="data:image/png;base64,' . $row['image'] . '" />';
-                echo '</a>';
-                echo '</figure>';
-              }
-            }
-          ?>
-          <!-- <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
-              <div>
-                <div>
-                  <img src="https://github.com/itsmecamila.png" alt="">
-                  <p>itsmecamila</p>
+        <section class="folders">
+            <a href="./folder.php">
+            <div class="folder">
+                <div class="folder-cap"></div>
+                <div class="folder-info">
+                    <p>Pasta</p>
+                    <span>Quantidade</span>
                 </div>
-              </div>
-            </a> 
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/0c/77/99/0c779927bd67cc6597a0872634820bbc.jpg" alt=""> 
-              <div>
-                <p>Nyan</p>
-                <div>
-                  <img src="https://github.com/itsmecamila.png" alt="">
-                  <p>itsmecamila</p>
-                </div>
-              </div>
+            </div>
             </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/fa/cd/1f/facd1f76ffa175c3ce3770baeed9d6ec.jpg" alt=""> 
-              
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/b2/70/d6/b270d60b7b423f6f9e656aa4edd08a21.jpg" alt="">
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
-              <div>
-                <div>
-                  <img src="https://github.com/itsmecamila.png" alt="">
-                  <p>itsmecamila</p>
-                </div>
-              </div>
-            </a> 
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/0c/77/99/0c779927bd67cc6597a0872634820bbc.jpg" alt=""> 
-              <div>
-                <p>Nyan</p>
-                <div>
-                  <img src="https://github.com/itsmecamila.png" alt="">
-                  <p>itsmecamila</p>
-                </div>
-              </div>
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/fa/cd/1f/facd1f76ffa175c3ce3770baeed9d6ec.jpg" alt=""> 
-              
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/b2/70/d6/b270d60b7b423f6f9e656aa4edd08a21.jpg" alt="">
-            </a>
-          </figure> -->
         </section>
     </main>
     
