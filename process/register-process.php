@@ -15,7 +15,7 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
     $search = "select * from users where username = '$username'";
     $result = mysqli_query($conn,$search);
 
-    if(!empty($result)){
+    if($result->num_rows >= 1){
         $_SESSION['RegisterError'] = "Nome de usuário já existente. Tente outro.";
         header("Location:../views/register.php");
         die();
