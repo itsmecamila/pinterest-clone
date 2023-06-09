@@ -3,14 +3,14 @@
 [x] - Banco de Dados
     [x] - Conectar com o banco de dados
 
-[] - Autenticação
-    [] - Criar Conta
-    [] - Entrar com uma conta existente
-        [] - Setar o cookie de autenticação no navegador
-    [] - Bloquear rotas com autenticação de usuários não logados
+[x] - Autenticação
+    [x] - Criar Conta
+    [x] - Entrar com uma conta existente
+        [x] - Setar o cookie de autenticação no navegador
+    [x] - Bloquear rotas com autenticação de usuários não logados
 
-[] - Posts
-    [] - Criação de um novo post
+[x] - Posts
+    [x] - Criação de um novo post
     [] - Comentar em um post
 
 [] - Perfil

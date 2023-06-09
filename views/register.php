@@ -42,6 +42,13 @@
                 </div>
                 <button type="submit">Criar conta</button>
             </form>
+            <?php
+                session_start();
+                if(isset($_SESSION["RegisterError"])){
+                    echo $_SESSION["RegisterError"];
+                }
+            ?>
+
             <footer>
                 <!--Termos de uso-->
                 <p>Ao continuar, você concorda com os Termos de Serviço do Pinterest e confirma que leu a nossa Política de Privacidade.</p>

@@ -1,3 +1,8 @@
+<?php
+  require "../process/validation-process.php";
+  validarLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

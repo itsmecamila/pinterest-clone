@@ -19,7 +19,7 @@
             <h1>Faça o login para ver mais</h1>
         </header>
         <section>
-            <form action="">
+            <form method="POST" action="../process/login-process.php">
                 <div class="input">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Digite seu email">

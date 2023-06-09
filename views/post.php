@@ -1,4 +1,7 @@
 <?php
+    require "../process/validation-process.php";
+    validarLogin();
+
     $conn = mysqli_connect("localhost", "root", "123", "pinterest");
     $sql = "select * from posts where id = " . $_GET['id'];
 
@@ -74,7 +77,7 @@
                     <h2>Comentários</h2>
                     <!--Aqui ficarão os comentários-->
                     <div><!--Aqui serão feitos os comentários-->
-                        <form action="">
+                        <form action="../process/comment-process.php" method="POST">
                             <img src="https://github.com/itsmecamila.png" alt=""> <!--Ícone do usuário-->
                             <input type="text" name="comment" id="comment" placeholder="Escreva seu comentário">
                             <button type="submit"> <!--Botão para ENVIAR comentário-->
