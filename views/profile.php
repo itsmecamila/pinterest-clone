@@ -75,27 +75,47 @@
         </section>
 
         <section class="masonry">
-          <figure>
+          <?php
+            require '../services/db.php';
+
+            $username = $_COOKIE['username'];
+
+            $conn = connectDatabase();
+            $sql = "select * from posts where user = '$username'";
+
+            $posts = mysqli_query($conn,$sql);
+
+            if ($posts->num_rows > 0) {
+              while ($row = $posts->fetch_assoc()) {
+                echo '<figure>';
+                echo '<a href="./post.php?id=' . $row['id'] .'">';
+                echo '<img src="data:image/png;base64,' . $row['image'] . '" />';
+                echo '</a>';
+                echo '</figure>';
+              }
+            }
+          ?>
+          <!-- <figure>
             <a href="./post.html">
               <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
-              <!-- <div>
+              <div>
                 <div>
                   <img src="https://github.com/itsmecamila.png" alt="">
                   <p>itsmecamila</p>
                 </div>
-              </div> -->
+              </div>
             </a> 
           </figure>
           <figure>
             <a href="./post.html">
               <img src="https://i.pinimg.com/564x/0c/77/99/0c779927bd67cc6597a0872634820bbc.jpg" alt=""> 
-              <!-- <div>
+              <div>
                 <p>Nyan</p>
                 <div>
                   <img src="https://github.com/itsmecamila.png" alt="">
                   <p>itsmecamila</p>
                 </div>
-              </div> -->
+              </div>
             </a>
           </figure>
           <figure>
@@ -112,24 +132,24 @@
           <figure>
             <a href="./post.html">
               <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
-              <!-- <div>
+              <div>
                 <div>
                   <img src="https://github.com/itsmecamila.png" alt="">
                   <p>itsmecamila</p>
                 </div>
-              </div> -->
+              </div>
             </a> 
           </figure>
           <figure>
             <a href="./post.html">
               <img src="https://i.pinimg.com/564x/0c/77/99/0c779927bd67cc6597a0872634820bbc.jpg" alt=""> 
-              <!-- <div>
+              <div>
                 <p>Nyan</p>
                 <div>
                   <img src="https://github.com/itsmecamila.png" alt="">
                   <p>itsmecamila</p>
                 </div>
-              </div> -->
+              </div>
             </a>
           </figure>
           <figure>
@@ -142,7 +162,7 @@
             <a href="./post.html">
               <img src="https://i.pinimg.com/564x/b2/70/d6/b270d60b7b423f6f9e656aa4edd08a21.jpg" alt="">
             </a>
-          </figure>
+          </figure> -->
         </section>
     </main>
     
