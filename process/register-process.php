@@ -1,9 +1,10 @@
 <?php
 session_start();
 
-if (!empty($_POST["email"]) && !empty($_POST["password"])) {
-    $conn = mysqli_connect("localhost", "root", "", "pinterest");
+require '../services/db.php';
 
+if (!empty($_POST["email"]) && !empty($_POST["password"])) {
+    $conn = connectDatabase();
 
     $username = $_POST["username"];
     $name = $_POST["name"];

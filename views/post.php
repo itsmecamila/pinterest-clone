@@ -2,7 +2,9 @@
     require "../process/validation-process.php";
     validarLogin();
 
-    $conn = mysqli_connect("localhost", "root", "123", "pinterest");
+    require "../services/db.php";
+
+    $conn = connectDatabase();
     $sql = "select * from posts where id = " . $_GET['id'];
 
     $post = mysqli_query($conn,$sql)->fetch_assoc();

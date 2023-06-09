@@ -46,7 +46,9 @@
     <main class="masonry">
         <!--Aqui ficarão todos os posts-->
         <?php
-          $conn = mysqli_connect("localhost", "root", "", "pinterest");
+          require '../services/db.php';
+
+          $conn = connectDatabase();
           $sql = "select * from posts";
 
           $posts = mysqli_query($conn,$sql);
