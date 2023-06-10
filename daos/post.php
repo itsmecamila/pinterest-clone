@@ -21,4 +21,11 @@
 
         return mysqli_query($conn,$getPostByIdSqlQuery);
     }
+
+    function deletePostById($postId) {
+        $conn = connectDatabase();
+        $deletePostByIdSqlQuery = "delete from posts where id = '$postId'";
+
+        return mysqli_query($conn,$deletePostByIdSqlQuery); 
+    }
 ?>
