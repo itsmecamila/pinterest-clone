@@ -13,18 +13,18 @@
 [x] - Posts
     [x] - Criação de um novo post
     [x] - Comentar em um post
-    [] - CSS comentarios
+        [x] - CSS comentarios
+        [x] - Barra de rolagem para comentarios excedendo tamanho da imagem
     [] - Excluir post
-    [] - Identificar dono do post
+    [x] - Identificar dono do post
     [] - Tratamento para post sem imagem
     [] - Salvar post em pasta (se n tiver paginas, sugerir criação)
-    [] - Barra de rolagem para comentarios excedendo tamanho da imagem
 
 [] - Perfil
     [x] - Mostrar os posts criado pelo usuário
     [x] - Nome, usuario e icone no perfil
     [] -  Editar perfil
-    [] - Atualizar icon em todas pages
+    [x] - Atualizar avatar em todas pages
     [] - Botã 
     [] - Mensagem quando não tiver nenhum post
 
