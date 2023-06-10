@@ -11,4 +11,11 @@
     function getCurrentUser() {
         return getUserByUsername($_COOKIE['username']);
     }
+
+    function updateUser($userId, $name, $photo) {
+        $conn = connectDatabase();
+        $updateUserSqlQuery = "update users set photo = '$photo', name = '$name' where username = '$userId'";
+
+        return mysqli_query($conn, $updateUserSqlQuery);
+    }
 ?>
