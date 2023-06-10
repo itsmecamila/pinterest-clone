@@ -66,19 +66,13 @@
               echo '</object>';
 
               echo '<h1>' .$loggedUser['name']. '</h1> <!--Nome do usuário-->';
-              echo '<p>' .$loggedUser['username']. '</p> <!--Usuário-->';
+              echo '<p>@' .$loggedUser['username']. '</p> <!--Usuário-->';
               echo '<!--Se der tempo, ACRESCENTAR EDITÇÃO DE PERFIL-->';
             ?>
         </section>
-        <div>
+        <section class="user-actions">
             <button>Compartilhar</button>
-            <button>Editar perfil</button>
-        </div>
-        <section>
-            <!--Aqui ficarão os POSTS CRIADOS-->
-            <a href="post.html">
-                <img src="" alt="">
-            </a>
+            <a href="./editprofile.php">Editar perfil</a>
         </section>
 
         <section class="pins-nav">
@@ -89,8 +83,6 @@
             Salvos
           </a>
         </section>
-
-
 
         <section class="pins-actions">
           <a href="./newfolder.php">
