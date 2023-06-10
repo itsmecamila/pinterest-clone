@@ -2,12 +2,14 @@
     require "../process/validation-process.php";
     validarLogin();
 
-    require "../services/db.php";
+    require "../daos/user.php";
+    require "../daos/post.php";
+    require "../daos/comment.php";
 
-    $conn = connectDatabase();
-    $sql = "select * from posts where id = " . $_GET['id'];
-
-    $post = mysqli_query($conn,$sql)->fetch_assoc();
+    $loggedUser = getCurrentUser();
+    $post = getPostById($_GET['id']);
+    $postAuthor = getUserByUsername($post['user']);
+    $comments = getCommentsFromPost($post['id']);
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +46,11 @@
             <div>
                 <a href="./profile.php">
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
-                    <img src="https://github.com/itsmecamila.png" alt="" class="avatar">
+                    <?php
+                        echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png" class="avatar">';
+                        echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="" class="avatar">';
+                        echo '</object>';
+                    ?>
                 </a>
                 </a>
                 <a href="../process/logout-process.php">
@@ -67,7 +73,6 @@
                 <?php
                     echo '<img src="data:image/png;base64,' . $post['image'] . '" />';
                 ?>
-                <!-- <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt=""> -->
             </div>
             <div class="post-details"> <!--Informações do post-->
                 <header><!--Botão para SALVAR post-->
@@ -77,30 +82,45 @@
                     <?php
                         echo "<h1>" . $post['title'] . "</h1>";
                         echo "<p>" . $post['description'] . "</p>";
+
+                        echo '<div class="post-author">';
+                        echo '<object data="'.$postAuthor['photo'] ? $postAuthor['photo'] : null.'" type="image/png">';
+                        echo '<img src="https://ui-avatars.com/api/?name='.$postAuthor['username'].'" alt="">';
+                        echo '</object>';
+                        echo '<p>' . $postAuthor['username'] . '</p>';
+                        echo '</div>';
                     ?>
                 </div>
                 <footer> <!--Comentários-->
                     <h2>Comentários</h2>
-                    <div>
-                    <?php
-                        $sql = "select * from comments where post_id ='".$_GET['id']."'";
+                    <section class="all-comments">
+                        <?php
+                            if ($comments->num_rows > 0) {
+                                while ($row = $comments->fetch_assoc()) {
+                                    $user = getUserByUsername($row['user_id']);
 
-                        $comments = mysqli_query($conn,$sql);
-
-                        if ($comments->num_rows > 0) {
-                            while ($row = $comments->fetch_assoc()) {
-                                echo '<div>';
-                                echo '<p>' . $row['user_id'] . '</p>';
-                                echo '<p>' . $row['comment'] . '</p>';
-                                echo '</div>';
+                                    echo '<div class="comment">';
+                                    echo '<object data="'.$user['photo'] ? $user['photo'] : null.'" type="image/png">';
+                                    echo '<img src="https://ui-avatars.com/api/?name='.$user['username'].'" alt="">';
+                                    echo '</object>';
+                                    echo '<div class="comment-content">';
+                                    echo '<p class="comment-author">' . $user['username'] . '</p>';
+                                    echo '<p class="comment-message">' . $row['comment'] . '</p>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                }
                             }
-                        }
-                    ?>
-                    </div>
+                        ?>
+                    </section>
                     <!--Aqui ficarão os comentários-->
                     <div><!--Aqui serão feitos os comentários-->
                         <form action="../process/comment-process.php?id=<?php echo $_GET['id']; ?>" method="POST">
-                            <img src="https://github.com/itsmecamila.png" alt=""> <!--Ícone do usuário-->
+                            <?php
+                                echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png">';
+                                echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="">';
+                                echo '</object>';
+                            ?>
+                            <!-- <img src="https://github.com/itsmecamila.png" alt=""> Ícone do usuário -->
                             <input type="text" name="comment" id="comment" placeholder="Escreva seu comentário">
                             <button type="submit"> <!--Botão para ENVIAR comentário-->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#fff" d="M27.71 4.29a1 1 0 0 0-1.05-.23l-22 8a1 1 0 0 0 0 1.87l8.59 3.43L19.59 11L21 12.41l-6.37 6.37l3.44 8.59A1 1 0 0 0 19 28a1 1 0 0 0 .92-.66l8-22a1 1 0 0 0-.21-1.05Z"/></svg>

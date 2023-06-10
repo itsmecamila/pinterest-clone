@@ -24,6 +24,26 @@ main > div {
   box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
 }
 
+.post-content .post-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 4px;
+}
+
+.post-content .post-author img,
+.post-content .post-author object {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 100%;
+}
+
+.post-content .post-author p {
+  font-weight: bold;
+}
+
 .post-content .post-content-image img {
   width: 100%;
   border-radius: 24px;
@@ -59,7 +79,6 @@ main > div {
 }
 
 .post-content .post-details > div {
-  flex: 1 ;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -111,4 +130,31 @@ form button {
   background-color: #e60023;
 
   cursor: pointer;
+}
+
+.all-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  max-height: 212px;
+  overflow-y: auto;
+}
+
+.all-comments .comment {
+  display: flex;
+  gap: 8px;
+
+  align-items: center;
+}
+
+.all-comments .comment img,
+.all-comments .comment object {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+}
+
+.all-comments .comment .comment-author {
+  font-weight: bold;
 }
