@@ -1,0 +1,41 @@
+.input-file input {
+    display: none;
+}
+
+.personal-informations {
+    display: flex;
+    max-width: 300px;
+    margin: 24px auto;
+}
+
+.personal-informations form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.personal-informations form .avatar img,
+.personal-informations form .avatar object {
+    width: 124px;
+    height: 124px;
+
+    border-radius: 100%;
+}
+
+.personal-informations form button {
+    width: 100%;
+    padding: 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+
+    background-color: #e60023;
+
+    cursor: pointer;
+}
