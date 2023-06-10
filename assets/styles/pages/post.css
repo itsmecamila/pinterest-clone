@@ -96,7 +96,8 @@ form {
   gap: 8px;
 }
 
-form img {
+form img,
+form object {
   width: 48px;
   height: 48px;
 
