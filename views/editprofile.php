@@ -93,11 +93,10 @@
             const [file] = avatarFileInputEl.files;
 
             if (file) {
-                if (avatarPreviewObjEl) {
+                if (avatarPreviewObjEl)
                     avatarPreviewObjEl.data = URL.createObjectURL(file);
-                } else {
-                    avatarPreviewEl.src = URL.createObjectURL(file);
-                }
+
+                avatarPreviewEl.src = URL.createObjectURL(file);
             }
         }
     </script>
