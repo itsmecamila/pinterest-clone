@@ -15,9 +15,9 @@
     [x] - Comentar em um post
         [x] - CSS comentarios
         [x] - Barra de rolagem para comentarios excedendo tamanho da imagem
-    [] - Excluir post
+    [x] - Excluir post
     [x] - Identificar dono do post
-    [] - Tratamento para post sem imagem
+    [x] - Tratamento para post sem imagem
     [] - Salvar post em pasta (se n tiver paginas, sugerir criação)
 
 [] - Perfil
@@ -26,7 +26,7 @@
     [x] -  Editar perfil
     [x] - Atualizar avatar em todas pages
     [] - Botã 
-    [] - Mensagem quando não tiver nenhum post
+    [x] - Mensagem quando não tiver nenhum post
 
 
 ## Funcionalidades Futuras
