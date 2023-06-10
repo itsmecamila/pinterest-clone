@@ -2,9 +2,11 @@
   require "../process/validation-process.php";
   validarLogin();
 
-  require "../services/db.php";
-  $conn = connectDatabase();
-  $user = mysqli_query($conn, "select * from users where username = '".$_COOKIE['username']."'")->fetch_assoc();
+  require "../daos/user.php";
+  require "../daos/post.php";
+
+  $user = getCurrentUser();
+  $allPostsFromUser = getAllPostsFromUser($_COOKIE['username']);
 ?>
 
 <!DOCTYPE html>
@@ -92,13 +94,8 @@
 
         <section class="masonry">
           <?php
-            $username = $_COOKIE['username'];
-            $sql = "select * from posts where user = '$username'";
-
-            $posts = mysqli_query($conn,$sql);
-
-            if ($posts->num_rows > 0) {
-              while ($row = $posts->fetch_assoc()) {
+            if ($allPostsFromUser->num_rows > 0) {
+              while ($row = $allPostsFromUser->fetch_assoc()) {
                 echo '<figure>';
                 echo '<a href="./post.php?id=' . $row['id'] .'">';
                 echo '<img src="data:image/png;base64,' . $row['image'] . '" />';

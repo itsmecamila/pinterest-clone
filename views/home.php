@@ -1,6 +1,10 @@
 <?php
   require "../process/validation-process.php";
   validarLogin();
+
+  require '../daos/post.php';
+
+  $posts = getAllPosts();
 ?>
 
 <!DOCTYPE html>
@@ -49,13 +53,6 @@
     <main class="masonry">
         <!--Aqui ficarão todos os posts-->
         <?php
-          require '../services/db.php';
-
-          $conn = connectDatabase();
-          $sql = "select * from posts";
-
-          $posts = mysqli_query($conn,$sql);
-
           if ($posts->num_rows > 0) {
             while ($row = $posts->fetch_assoc()) {
               echo '<figure>';
