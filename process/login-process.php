@@ -15,20 +15,8 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
         die();
     }
 
-    header("Location:./views/login.php");
 }
 
-
-    //$search = "select * from users where email = $email and password = $password";
-    //$result = mysqli_query($conn,$search); 
-
-    //if(mysqli_num_rows($result) > 0){
-      //  $_COOKIE['user'] = $result->fetch_assoc()["username"];
-        //header("Location:../views/home.php"); 
-        //die();
-    //}
-
-    header("Location:../views/login.php");
-    die();
-//}
+header("Location:./views/login.php");
+die();
 ?>

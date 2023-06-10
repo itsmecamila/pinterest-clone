@@ -3,7 +3,7 @@ session_start();
 
 require '../services/db.php';
 
-if (!empty($_POST["email"]) && !empty($_POST["password"])) {
+if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST['username']) && isset($_POST['name']) && isset($_POST['birthday'])) {
     $conn = connectDatabase();
 
     $username = $_POST["username"];
@@ -20,19 +20,20 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
         header("Location:../views/register.php");
         die();
     }
-
     
     $sql =  "insert into users (username, name, email, password, birthday) values ('$username', '$name', '$email', '$password', '$birthday')";
     
     try{
         mysqli_query($conn, $sql);
         header("Location:../views/home.php");
+        die();
     }
 
     catch(Exception $e){
         echo "Ocorreu algum erro. Tente novamente com outro email ou username.";
     }
-
 }
 
+header("Location:../views/register.php");
+die();
 ?>

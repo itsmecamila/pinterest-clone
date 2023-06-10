@@ -1,8 +1,5 @@
 <?php
-    require "../services/db.php";
     require "../daos/user.php";
-
-    $conn = connectDatabase();
 
     $loggedUser = getCurrentUser();
     $avatarData = $loggedUser['photo'];
@@ -16,11 +13,8 @@
     $name = $_POST['name'];
     $username = $loggedUser['username'];
 
-    $sql = "update users set photo = '$avatarData', name = '$name' where username = '$username'";
-
-    mysqli_query($conn, $sql);
+    updateUser($username, $name, $avatarData);
 
     header('Location:../views/profile.php');
-
-            
+    die();
 ?>

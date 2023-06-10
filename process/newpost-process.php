@@ -15,5 +15,8 @@ if (count($_FILES) > 0) {
         mysqli_query($conn, $sql);
 
         header('Location:../views/home.php');
+        die();
     }
 }
+header('Location:../views/newpost.php');
+die();
