@@ -66,7 +66,7 @@
               echo '</object>';
 
               echo '<h1>' .$loggedUser['name']. '</h1> <!--Nome do usuário-->';
-              echo '<p>' .$loggedUser['username']. '</p> <!--Usuário-->';
+              echo '<p>@' .$loggedUser['username']. '</p> <!--Usuário-->';
               echo '<!--Se der tempo, ACRESCENTAR EDITÇÃO DE PERFIL-->';
             ?>
         </section>
@@ -90,86 +90,32 @@
           </a>
         </section>
 
-        <section class="masonry">
+        <section>
           <?php
             if ($allPostsFromUser->num_rows > 0) {
+              echo '<section class="masonry">';
               while ($row = $allPostsFromUser->fetch_assoc()) {
                 echo '<figure>';
                 echo '<a href="./post.php?id=' . $row['id'] .'">';
                 echo '<img src="data:image/png;base64,' . $row['image'] . '" />';
                 echo '</a>';
+                echo '<form method="POST" action="../process/removepost-process.php?id='.$row['id'].'" class="remove-post">';
+                echo '<button>';
+                echo '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#ffffff" d="m9.4 16.5l2.6-2.6l2.6 2.6l1.4-1.4l-2.6-2.6L16 9.9l-1.4-1.4l-2.6 2.6l-2.6-2.6L8 9.9l2.6 2.6L8 15.1l1.4 1.4ZM7 21q-.825 0-1.413-.588T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.588 1.413T17 21H7ZM17 6H7v13h10V6ZM7 6v13V6Z"/></svg>';
+                echo '</button>';
+                echo '</form>';
                 echo '</figure>';
               }
+              echo '</section>';
+            } else {
+              echo '<div class="empty-posts">';
+              echo '<p>Ainda não há nada para mostrar. Os Pins que você criar ficarão aqui.</p>';
+              echo '<a href="./newpost.php">Criar um post</a>';
+              echo '</div>';
             }
           ?>
-          <!-- <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
-              <div>
-                <div>
-                  <img src="https://github.com/itsmecamila.png" alt="">
-                  <p>itsmecamila</p>
-                </div>
-              </div>
-            </a> 
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/0c/77/99/0c779927bd67cc6597a0872634820bbc.jpg" alt=""> 
-              <div>
-                <p>Nyan</p>
-                <div>
-                  <img src="https://github.com/itsmecamila.png" alt="">
-                  <p>itsmecamila</p>
-                </div>
-              </div>
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/fa/cd/1f/facd1f76ffa175c3ce3770baeed9d6ec.jpg" alt=""> 
-              
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/b2/70/d6/b270d60b7b423f6f9e656aa4edd08a21.jpg" alt="">
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/63/34/4e/63344e1ba4888c4f00b27b06f3598b25.jpg" alt="">
-              <div>
-                <div>
-                  <img src="https://github.com/itsmecamila.png" alt="">
-                  <p>itsmecamila</p>
-                </div>
-              </div>
-            </a> 
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/0c/77/99/0c779927bd67cc6597a0872634820bbc.jpg" alt=""> 
-              <div>
-                <p>Nyan</p>
-                <div>
-                  <img src="https://github.com/itsmecamila.png" alt="">
-                  <p>itsmecamila</p>
-                </div>
-              </div>
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/fa/cd/1f/facd1f76ffa175c3ce3770baeed9d6ec.jpg" alt=""> 
-              
-            </a>
-          </figure>
-          <figure>
-            <a href="./post.html">
-              <img src="https://i.pinimg.com/564x/b2/70/d6/b270d60b7b423f6f9e656aa4edd08a21.jpg" alt="">
-            </a>
-          </figure> -->
+
+          
         </section>
     </main>
     
