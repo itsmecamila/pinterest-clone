@@ -47,7 +47,7 @@
                 <a href="./profile.php">
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
                     <?php
-                        echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png" class="avatar">';
+                        echo '<object data="data:image/png;base64,'.$loggedUser['photo'].'" type="image/png" class="avatar">';
                         echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="" class="avatar">';
                         echo '</object>';
                     ?>
@@ -84,7 +84,7 @@
                         echo "<p>" . $post['description'] . "</p>";
 
                         echo '<div class="post-author">';
-                        echo '<object data="'.$postAuthor['photo'] ? $postAuthor['photo'] : null.'" type="image/png">';
+                        echo '<object data="data:image/png;base64,'.$postAuthor['photo'].'" type="image/png">';
                         echo '<img src="https://ui-avatars.com/api/?name='.$postAuthor['username'].'" alt="">';
                         echo '</object>';
                         echo '<p>' . $postAuthor['username'] . '</p>';
@@ -100,7 +100,7 @@
                                     $user = getUserByUsername($row['user_id']);
 
                                     echo '<div class="comment">';
-                                    echo '<object data="'.$user['photo'] ? $user['photo'] : null.'" type="image/png">';
+                                    echo '<object data="data:image/png;base64,'.$user['photo'].'" type="image/png">';
                                     echo '<img src="https://ui-avatars.com/api/?name='.$user['username'].'" alt="">';
                                     echo '</object>';
                                     echo '<div class="comment-content">';
@@ -116,7 +116,7 @@
                     <div><!--Aqui serão feitos os comentários-->
                         <form action="../process/comment-process.php?id=<?php echo $_GET['id']; ?>" method="POST">
                             <?php
-                                echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png">';
+                                echo '<object data="data:image/png;base64,'.$loggedUser['photo'].'" type="image/png">';
                                 echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="">';
                                 echo '</object>';
                             ?>

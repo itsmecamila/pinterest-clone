@@ -44,7 +44,7 @@
                 <a href="./profile.php">
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
                     <?php
-                        echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png" class="avatar">';
+                        echo '<object data="data:image/png;base64,'.$loggedUser['photo'].'" type="image/png" class="avatar">';
                         echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="" class="avatar">';
                         echo '</object>';
                     ?>
@@ -61,7 +61,7 @@
         <section class="personal-informations">
             <!--Aqui ficarão as informações pessoais-->
             <?php
-              echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png">';
+              echo '<object data="data:image/png;base64,'.$loggedUser['photo'].'" type="image/png">';
               echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="">';
               echo '</object>';
 

@@ -44,7 +44,7 @@
                 <a href="./profile.php">
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
                     <?php
-                        echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png" class="avatar">';
+                        echo '<object data="data:image/png;base64,'.$loggedUser['photo'].'" type="image/png" class="avatar">';
                         echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="" class="avatar">';
                         echo '</object>';
                     ?>
