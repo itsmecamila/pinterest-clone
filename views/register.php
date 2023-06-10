@@ -1,3 +1,9 @@
+<?php
+    require "../process/validation-process.php";
+
+    onlyUnauthenticatedUser();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

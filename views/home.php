@@ -1,6 +1,6 @@
 <?php
   require "../process/validation-process.php";
-  validarLogin();
+  onlyAuthenticatedUser();
 
   require '../daos/post.php';
   require '../daos/user.php';
