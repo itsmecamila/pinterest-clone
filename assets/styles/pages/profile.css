@@ -105,7 +105,7 @@ main .user-actions a {
 
 .pins-nav {
   display: flex;
-  flex-direction: column;
+  margin: 16px 0;
 }
 
 .pins-nav a {
@@ -116,7 +116,7 @@ main .user-actions a {
   border-radius: 8px;
 }
 
-.pins-nav a:hover {
+.pins-nav a:not(.pins-nav-current-page):hover {
   background-color: #f0f0f0;
 }
 
@@ -159,4 +159,63 @@ main .user-actions a {
 }
 .pins-actions a:hover {
   background: #f0f0f0;
+}
+
+.empty-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty-posts a {
+  width: fit-content;
+  padding: 16px;
+  margin: 0 auto;
+
+  border: none;
+  border-radius: 24px;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+
+  background-color: #e60023;
+
+  cursor: pointer;
+}
+
+.remove-post button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  aspect-ratio: 1 / 1;
+  padding: 4px;
+  border: none;
+  border-radius: 100%;
+  background-color: #e60023;
+}
+
+.remove-post button svg {
+  width: 24px;
+  height: 24px;
+  line-height: 0;
+}
+
+.masonry figure {
+  position: relative;
+}
+
+.masonry figure .remove-post {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+
+  right: 8px;
+  top: 8px;
+}
+
+.masonry figure:hover .remove-post {
+  display: flex;
+  pointer-events: all;
 }
