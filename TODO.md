@@ -23,7 +23,7 @@
 [] - Perfil
     [x] - Mostrar os posts criado pelo usuário
     [x] - Nome, usuario e icone no perfil
-    [] -  Editar perfil
+    [x] -  Editar perfil
     [x] - Atualizar avatar em todas pages
     [] - Botã 
     [] - Mensagem quando não tiver nenhum post
