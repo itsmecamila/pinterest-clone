@@ -22,11 +22,11 @@
             <form method="POST" action="../process/login-process.php">
                 <div class="input">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu email">
+                    <input type="email" name="email" id="email" placeholder="Digite seu email" required>
                 </div>
                 <div class="input">
                     <label for="password">Senha</label>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
                     <a href="#">Esqueceu sua senha? </a> 
                 </div>
                 <button>Entrar</button>

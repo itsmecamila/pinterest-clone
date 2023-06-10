@@ -22,23 +22,23 @@
             <form method="POST" action="../process/register-process.php">
                 <div class="input">
                     <label for="username">Usuário</label>
-                    <input type="text" name="username" id="username" placeholder="Nome de usuário">
+                    <input type="text" name="username" id="username" placeholder="Nome de usuário" required>
                 </div>
                 <div class="input">
                     <label for="name">Nome</label>
-                    <input type="text" name="name" id="name" placeholder="Digite seu nome">
+                    <input type="text" name="name" id="name" placeholder="Digite seu nome" required>
                 </div>
                 <div class="input">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu email">
+                    <input type="email" name="email" id="email" placeholder="Digite seu email" required>
                 </div>
                 <div class="input">
                     <label for="password">Senha</label>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
                 </div>
                 <div class="input">
                     <label for="birthday">Data de nascimento</label>
-                    <input type="date" name="birthday" id="birthday">
+                    <input type="date" name="birthday" id="birthday" required>
                 </div>
                 <button type="submit">Criar conta</button>
             </form>

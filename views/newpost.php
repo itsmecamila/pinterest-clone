@@ -61,12 +61,12 @@
               <!--Titulo do post-->
               <div class="input"> 
                   <label for="title">Título</label>
-                  <input type="text" name="title" id="title" placeholder="Escreva o título aqui">    
+                  <input type="text" name="title" id="title" placeholder="Escreva o título aqui" required>
               </div>
               <!--Descrição do post-->
               <div class="input"> 
                   <label for="description">Descrição</label>
-                  <input type="text" name="description" id="description" placeholder="Escreva a descrição do post">
+                  <input type="text" name="description" id="description" placeholder="Escreva a descrição do post" required>
               </div>
             </div>
             <!--Imagem do post-->
@@ -77,7 +77,7 @@
 
                   <small>Recomendamos o uso de arquivos de alta qualidade .jpg com menos de 20 MB</small>
                 </label>
-                <input type="file" name="file" id="file" accept="image/*">
+                <input type="file" name="file" id="file" accept="image/*" required>
                 <img class="image-preview">
                 <!--Colocar PREVIEW imagem-->
             </div>

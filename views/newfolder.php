@@ -63,7 +63,7 @@
               <!--Titulo do post-->
               <div class="input"> 
                   <label for="name">Nome</label>
-                  <input type="text" name="name" id="name" placeholder="Escreva o nome da pasta aqui">    
+                  <input type="text" name="name" id="name" placeholder="Escreva o nome da pasta aqui" required>
               </div>
             </div>
             <!--Imagem do post-->

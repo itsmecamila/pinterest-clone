@@ -76,7 +76,7 @@
 
                 <div class="input">
                     <label for="name">Nome:</label>
-                    <input type="text" name="name" id="name" value="<?php echo $loggedUser['name'] ?>">
+                    <input type="text" name="name" id="name" value="<?php echo $loggedUser['name'] ?>" required>
                 </div>
 
                 <button>Salvar alterações</button>
