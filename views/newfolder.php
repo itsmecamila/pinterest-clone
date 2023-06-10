@@ -1,6 +1,10 @@
 <?php
   require "../process/validation-process.php";
   validarLogin();
+
+  require "../daos/user.php";
+
+  $loggedUser = getCurrentUser();
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +42,11 @@
             <div>
                 <a href="./profile.php">
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
-                    <img src="https://github.com/itsmecamila.png" alt="" class="avatar">
+                    <?php
+                        echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png" class="avatar">';
+                        echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="" class="avatar">';
+                        echo '</object>';
+                    ?>
                 </a>
                 </a>
                 <a href="../process/logout-process.php">

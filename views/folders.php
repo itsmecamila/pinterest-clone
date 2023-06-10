@@ -2,10 +2,11 @@
   require "../process/validation-process.php";
   validarLogin();
 
-  require "../services/db.php";
-  $conn = connectDatabase();
-  $user = mysqli_query($conn, "select * from users where username = '".$_COOKIE['username']."'")->fetch_assoc();
+  require "../daos/user.php";
+
+  $loggedUser = getCurrentUser();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +43,11 @@
             <div>
                 <a href="./profile.php">
                     <!--Aqui ficará o link da imagem do USUÁRIO-->
-                    <img src="https://github.com/itsmecamila.png" alt="" class="avatar">
+                    <?php
+                        echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png" class="avatar">';
+                        echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="" class="avatar">';
+                        echo '</object>';
+                    ?>
                 </a>
                 </a>
                 <a href="../process/logout-process.php">
@@ -56,12 +61,12 @@
         <section class="personal-informations">
             <!--Aqui ficarão as informações pessoais-->
             <?php
-              echo '<object data="'.$user['photo'].'" type="image/png">';
-              echo '<img src="https://ui-avatars.com/api/?name='.$user['username'].'" alt="">';
+              echo '<object data="'.$loggedUser['photo'] ? $loggedUser['photo'] : null.'" type="image/png">';
+              echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="">';
               echo '</object>';
 
-              echo '<h1>' .$user['name']. '</h1> <!--Nome do usuário-->';
-              echo '<p>' .$user['username']. '</p> <!--Usuário-->';
+              echo '<h1>' .$loggedUser['name']. '</h1> <!--Nome do usuário-->';
+              echo '<p>' .$loggedUser['username']. '</p> <!--Usuário-->';
               echo '<!--Se der tempo, ACRESCENTAR EDITÇÃO DE PERFIL-->';
             ?>
         </section>
