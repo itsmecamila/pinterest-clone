@@ -61,12 +61,12 @@
               <!--Titulo do post-->
               <div class="input"> 
                   <label for="title">Título</label>
-                  <input type="text" name="title" id="title" placeholder="Escreva o título aqui" required>
+                  <input type="text" name="title" id="title" placeholder="Escreva o título aqui">
               </div>
               <!--Descrição do post-->
               <div class="input"> 
                   <label for="description">Descrição</label>
-                  <input type="text" name="description" id="description" placeholder="Escreva a descrição do post" required>
+                  <input type="text" name="description" id="description" placeholder="Escreva a descrição do post">
               </div>
             </div>
             <!--Imagem do post-->
