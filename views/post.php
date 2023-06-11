@@ -76,7 +76,10 @@
             </div>
             <div class="post-details"> <!--Informações do post-->
                 <header><!--Botão para SALVAR post-->
-                    <button>Salvar</button>
+                <?php
+                    echo '<a href="../views/savepost.php?post_id='.$post['id'].'">Salvar</a>';
+                ?>    
+                    
                 </header>
                 <div> <!--Título e descrição-->
                     <?php
@@ -87,7 +90,7 @@
                         echo '<object data="data:image/png;base64,'.$postAuthor['photo'].'" type="image/png">';
                         echo '<img src="https://ui-avatars.com/api/?name='.$postAuthor['username'].'" alt="">';
                         echo '</object>';
-                        echo '<p>' . $postAuthor['username'] . '</p>';
+                        echo '<p>' . $postAuthor['name'] . '</p>';
                         echo '</div>';
                     ?>
                 </div>
@@ -104,7 +107,7 @@
                                     echo '<img src="https://ui-avatars.com/api/?name='.$user['username'].'" alt="">';
                                     echo '</object>';
                                     echo '<div class="comment-content">';
-                                    echo '<p class="comment-author">' . $user['username'] . '</p>';
+                                    echo '<p class="comment-author">' . $user['name'] . '</p>';
                                     echo '<p class="comment-message">' . $row['comment'] . '</p>';
                                     echo '</div>';
                                     echo '</div>';
@@ -132,6 +135,7 @@
 
         </section>
     </main>
+    
     
 </body>
 </html>

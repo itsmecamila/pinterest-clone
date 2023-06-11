@@ -63,7 +63,7 @@ main > div {
   justify-content: flex-end;
 }
 
-.post-content .post-details header button {
+.post-content .post-details header a {
   padding: 12px 16px;
 
   border: none;

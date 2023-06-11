@@ -11,3 +11,40 @@
     margin-bottom: 50px;
 }
 
+.remove-post button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    aspect-ratio: 1 / 1;
+    padding: 4px;
+    border: none;
+    border-radius: 100%;
+    background-color: #e60023;
+  }
+  
+  .remove-post button svg {
+    width: 24px;
+    height: 24px;
+    line-height: 0;
+  }
+  
+  .masonry figure {
+    position: relative;
+  }
+  
+  .masonry figure .remove-post {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+  
+    right: 8px;
+    top: 8px;
+  }
+  
+  .masonry figure:hover .remove-post {
+    display: flex;
+    pointer-events: all;
+  }
+  
+  

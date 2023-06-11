@@ -3,8 +3,12 @@
   onlyAuthenticatedUser();
 
   require "../daos/user.php";
+  require "../daos/folder.php";
+  require "../daos/post.php";
 
   $loggedUser = getCurrentUser();
+  $folderId = $_GET['id'];
+  $allPostsFromFolder = getAllPostsFromFolder($folderId);
 ?>
 
 <!DOCTYPE html>
@@ -56,26 +60,31 @@
     </header>
 
     <section class="folder-info">
-        <h1>Pasta</h1>
-        <p>Quantidade</p>
+        <?php
+        $folder = getFolderById($folderId);
+
+        echo '<h1>'.$folder['name'].'</h1>';
+        echo '<p>'.$allPostsFromFolder->num_rows.' pins</p>';
+        ?>
     </section>
     
     <main class="masonry">
         <!--Aqui ficarão todos os posts-->
         <?php
-          require '../services/db.php';
-
-          $conn = connectDatabase();
-          $sql = "select * from posts";
-
-          $posts = mysqli_query($conn,$sql);
-
-          if ($posts->num_rows > 0) {
-            while ($row = $posts->fetch_assoc()) {
+          if ($allPostsFromFolder->num_rows > 0) {
+            while ($row = $allPostsFromFolder->fetch_assoc()) {
+    
+              $post = getPostById($row['post_id']);
+    
               echo '<figure>';
-              echo '<a href="./post.php?id=' . $row['id'] .'">';
-              echo '<img src="data:image/png;base64,' . $row['image'] . '" />';
+              echo '<a href="./post.php?id=' . $post['id'] .'">';
+              echo '<img src="data:image/png;base64,' . $post['image'] . '" />';
               echo '</a>';
+              echo '<form method="POST" action="../process/removepostfromfolder-process.php?post_id='.$post['id'].'&folder_id='.$folderId.'" class="remove-post">';
+              echo '<button>';
+              echo '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#ffffff" d="m9.4 16.5l2.6-2.6l2.6 2.6l1.4-1.4l-2.6-2.6L16 9.9l-1.4-1.4l-2.6 2.6l-2.6-2.6L8 9.9l2.6 2.6L8 15.1l1.4 1.4ZM7 21q-.825 0-1.413-.588T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.588 1.413T17 21H7ZM17 6H7v13h10V6ZM7 6v13V6Z"/></svg>';
+              echo '</button>';
+              echo '</form>';  
               echo '</figure>';
             }
           }

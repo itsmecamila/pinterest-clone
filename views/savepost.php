@@ -6,8 +6,8 @@
   require "../daos/folder.php";
 
   $loggedUser = getCurrentUser();
+  $postId = $_GET['post_id'];
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,11 +15,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="../assets/styles/reset.css">
     <link rel="stylesheet" href="../assets/styles/components.css">
-    <link rel="stylesheet" href="../assets/styles/pages/profile.css">
-    <link rel="stylesheet" href="../assets/styles/pages/folders.css">
+    <link rel="stylesheet" href="../assets/styles/pages/home.css">
+    <link rel="stylesheet" href="../assets/styles/pages/folder.css">
+    <link rel="stylesheet" href="../assets/styles/pages/savepost.css">
 
     <title>Pinterest</title>
 </head>
@@ -50,7 +51,6 @@
                         echo '</object>';
                     ?>
                 </a>
-                </a>
                 <a href="../process/logout-process.php">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000" d="M15.325 16.275q-.275-.325-.275-.737t.275-.688l1.85-1.85H10q-.425 0-.713-.288T9 12q0-.425.288-.713T10 11h7.175l-1.85-1.85q-.3-.3-.3-.713t.3-.712q.275-.3.688-.3t.687.275l3.6 3.6q.15.15.213.325t.062.375q0 .2-.062.375t-.213.325l-3.6 3.6q-.325.325-.713.288t-.662-.313ZM5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h6q.425 0 .713.288T12 4q0 .425-.288.713T11 5H5v14h6q.425 0 .713.288T12 20q0 .425-.288.713T11 21H5Z"/></svg>
                 </a>
@@ -58,54 +58,26 @@
         </nav>
     </header>
 
+    <section class="folder-info">
+        <h1>Salvar</h1>
+        <p>Suas pastas </p>
+    </section>
+    
     <main>
-        <section class="personal-informations">
-            <!--Aqui ficarão as informações pessoais-->
-            <?php
-              echo '<object data="data:image/png;base64,'.$loggedUser['photo'].'" type="image/png">';
-              echo '<img src="https://ui-avatars.com/api/?name='.$loggedUser['username'].'" alt="">';
-              echo '</object>';
-
-              echo '<h1>' .$loggedUser['name']. '</h1> <!--Nome do usuário-->';
-              echo '<p>@' .$loggedUser['username']. '</p> <!--Usuário-->';
-              echo '<!--Se der tempo, ACRESCENTAR EDITÇÃO DE PERFIL-->';
-            ?>
-        </section>
-        <section class="user-actions">
-            <button>Compartilhar</button>
-            <a href="./editprofile.php">Editar perfil</a>
-        </section>
-
-        <section class="pins-nav">
-          <a href="./profile.php"">
-            Criados
-          </a>
-          <a href="#" class="pins-nav-current-page">
-            Salvos
-          </a>
-        </section>
-
-        <section class="pins-actions">
-          <a href="./newfolder.php">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z"/></svg>
-          </a>
-        </section>
-
-        <section>
+        <!--Aqui ficarão todos os posts-->
         <?php
-
             $folders = getAllFoldersFromUser($loggedUser['username']);
             if ($folders->num_rows > 0) {
               echo '<section class="folders">';
               while ($row = $folders->fetch_assoc()) {
                 $cont = getAllPostsFromFolder($row['id'])->num_rows;
 
-                echo '<a href="./folder.php?id='.$row['id'].'">';
+                echo '<a href="../process/savepost-process.php?post_id='.$postId.'&folder_id='.$row['id'].'">';
                 echo '  <div class="folder">';
                 echo '     <div class="folder-cap"></div>';
                 echo '     <div class="folder-info">';
                 echo '         <p>'.$row['name'].'</p>';
-                echo '         <span>'.$cont. ' pins </span>';
+                echo '         <span>'.$cont.' pins</span>';
                 echo '     </div>';
                 echo '  </div>';
                 echo '</a>';
@@ -113,14 +85,14 @@
               echo '</section>';
             } else {
               echo '<div class="empty-posts">';
-              echo '<p>Ainda não há nada para mostrar. As Pastas que você criar ficarão aqui.</p>';
+              echo '<p>Ainda não há nada para mostrar. As pastas que você criar ficarão aqui.</p>';
               echo '<a href="./newfolder.php">Criar uma pasta</a>';
               echo '</div>';
             }
           ?>
-            
-        </section>
+       
     </main>
+
     
 </body>
 </html>
