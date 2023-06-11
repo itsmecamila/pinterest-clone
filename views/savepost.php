@@ -84,7 +84,7 @@
               }
               echo '</section>';
             } else {
-              echo '<div class="empty-posts">';
+              echo '<div class="empty-folders">';
               echo '<p>Ainda não há nada para mostrar. As pastas que você criar ficarão aqui.</p>';
               echo '<a href="./newfolder.php">Criar uma pasta</a>';
               echo '</div>';
