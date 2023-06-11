@@ -25,7 +25,9 @@
     function deletePostById($postId) {
         $conn = connectDatabase();
         $deletePostByIdSqlQuery = "delete from posts where id = '$postId'";
+        $deletePostFromFolderSqlQuery = "delete from folder_has_post where post_id = '$postId'";
 
-        return mysqli_query($conn,$deletePostByIdSqlQuery); 
+        mysqli_query($conn,$deletePostByIdSqlQuery); 
+        mysqli_query($conn,$deletePostFromFolderSqlQuery); 
     }
 ?>
